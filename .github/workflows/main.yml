@@ -31,7 +31,7 @@ jobs:
       #   run: |
       #     npx wait-on http://localhost:19002
 
-      name: Run Cypress tests
+      - name: Run Cypress tests
         uses: cypress-io/github-action@v5.5.1
         with:
           cypress-command: 'npm run cy:run'
