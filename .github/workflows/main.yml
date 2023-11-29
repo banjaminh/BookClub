@@ -27,9 +27,9 @@ jobs:
       - name: Start Expo
         run: expo start --non-interactive --no-https &
 
-      - name: Wait for Expo to start
-        run: |
-          npx wait-on http://localhost:19002
+      # - name: Wait for Expo to start
+      #   run: |
+      #     npx wait-on http://localhost:19002
 
       - name: Run Cypress tests
         uses: cypress-io/github-action@v5.5.1
