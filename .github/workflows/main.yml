@@ -25,10 +25,11 @@ jobs:
         run: npm install
 
       - name: Start Expo
-        run: expo start --non-interactive --no-https
+        run: expo start --non-interactive --no-https &
 
       - name: Wait for Expo to start
-        run: sleep 30
+        run: |
+          npx wait-on http://localhost:19002
 
       - name: Run Cypress tests
         uses: cypress-io/github-action@v5.5.1
