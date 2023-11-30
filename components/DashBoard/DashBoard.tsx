@@ -1,6 +1,8 @@
 import { Text, View, SafeAreaView } from 'react-native';
-import Ionicons from '@expo/vector-icons/Ionicons';
+import { Ionicons } from '@expo/vector-icons';
+
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Home from '../Home/Home';
 
 const Tab = createBottomTabNavigator()
 
@@ -12,10 +14,13 @@ export default function DashBoard(){
     >
       <Tab.Screen
         name='home'
-        options={{ headerShown: false }}
+        component={Home}
+        options={{ headerShown: false, tabBarIcon: ({ color, size }) => (
+            <Ionicons name="home" color={color} size={size} />
+          ), }}
       />
 
-      <Tab.Screen
+      {/* <Tab.Screen
         name='current'
         options={{ headerShown: false }}
       />
@@ -28,7 +33,7 @@ export default function DashBoard(){
       <Tab.Screen
         name='bookclub'
         options={{ headerShown: false }}
-      />
+      /> */}
     </Tab.Navigator>
   );
 
