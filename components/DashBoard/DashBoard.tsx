@@ -6,6 +6,7 @@ import Home from '../Home/Home';
 import Current from '../Current/Current';
 import Search from '../Search/Search';
 import BookClub from '../BookClub/BookClub';
+import Header from '../Header/Header'
 
 const Tab = createBottomTabNavigator()
 
@@ -18,15 +19,20 @@ export default function DashBoard(){
       <Tab.Screen
         name='home'
         component={Home}
-        options={{ headerShown: false, tabBarIcon: ({ color, size }) => (
+        options={{header: () => <Header />,
+        headerStyle: {
+          backgroundColor: '#EAB464',
+        }, tabBarIcon: ({ color, size }) => (
             <Ionicons name="home" color={color} size={size} />
           ), }}
       />
-
       <Tab.Screen
         name='current'
         component={Current}
-        options={{ headerShown: false, tabBarIcon: ({ color, size }) => (
+        options={{header: () => <Header />,
+        headerStyle: {
+          backgroundColor: '#EAB464',
+        }, tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="book-open-blank-variant" size={size} color={color}/>
           ) }}
       />
@@ -34,7 +40,10 @@ export default function DashBoard(){
       <Tab.Screen
         name='search'
         component={Search}
-        options={{ headerShown: false, tabBarIcon: ({ color, size }) => (
+        options={{header: () => <Header />,
+        headerStyle: {
+          backgroundColor: '#EAB464',
+        }, tabBarIcon: ({ color, size }) => (
             <Ionicons name="search-outline" color={color} size={size} />
           ) }}
       />
@@ -42,7 +51,10 @@ export default function DashBoard(){
       <Tab.Screen
         name='bookclub'
         component={BookClub}
-        options={{ headerShown: false, tabBarIcon: ({ color, size }) => (
+        options={{header: () => <Header />,
+        headerStyle: {
+          backgroundColor: '#EAB464',
+        }, tabBarIcon: ({ color, size }) => (
             <Ionicons name="people" color={color} size={size} />
           ) }}
       />
