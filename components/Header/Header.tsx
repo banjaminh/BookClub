@@ -7,6 +7,7 @@ export default function Header() {
       <Image 
       style={{width: 90, height: 60, marginLeft: 25, marginTop: 100, marginBottom: 0, padding: 0}}
       source={require('../../assets/logo.png')}
+      accessibilityLabel={'BookClub logo.'}
       />
     </View>
   )
