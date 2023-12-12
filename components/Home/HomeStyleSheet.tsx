@@ -5,5 +5,13 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'lightblue',
+    position: 'relative',
+  },
+
+  scrollContainer:{
+    marginTop: 200,
+    // marginLeft: 25,
   }
+
 })
