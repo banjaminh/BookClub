@@ -1,11 +1,22 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text } from "react-native";
+import { useEffect } from "react";
 import { styles } from "./HomeStyleSheet";
-import config from "../../config";
-import {gatherLatest, getTopFive} from "../../apiCalls";
+// import { gatherLatest } from "../../apiCalls"
 
 export default function Home() {
-  // console.log(gatherLatest())
-  
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const info = await gatherLatest()
+  //       console.log(info)
+  //     } catch(error) {
+  //       console.log(error)
+  //     }
+  //   } 
+
+  //   fetchData()
+  // }, [])
 
   return(
     <View style={styles.homeContainer}>
