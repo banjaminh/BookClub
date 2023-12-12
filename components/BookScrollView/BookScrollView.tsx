@@ -52,6 +52,9 @@ export default function BookScrollView() {
 					<View style={styles.modalContent}>
 						{selectedBook && (
 							<>
+								<TouchableOpacity onPress={() => setModalVisible(false)}>
+									<Text style={styles.modalClose}>X</Text>
+								</TouchableOpacity>
 								<Text style={styles.modalTitle}>{selectedBook.title}</Text>
 								<Image
 									style={styles.bookImage}
@@ -60,14 +63,11 @@ export default function BookScrollView() {
 									}}
 									resizeMode="cover"
 								/>
-								<Text>Author: {selectedBook.author}</Text>
-								<Text>Genre: Fiction</Text>
+								<Text style={styles.modalBookText}>Author: {selectedBook.author}</Text>
+								<Text style={styles.modalBookText}>Genre: Fiction</Text>
 
-								<Text>{selectedBook.description}</Text>
+								<Text style={styles.modalBookDescription}>{selectedBook.description}</Text>
 
-								<TouchableOpacity onPress={() => setModalVisible(false)}>
-									<Text style={styles.modalClose}>Close</Text>
-								</TouchableOpacity>
 							</>
 						)}
 					</View>

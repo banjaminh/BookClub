@@ -26,6 +26,9 @@ export const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 4,
     overflow: 'hidden',
+
+    alignSelf: 'center',
+    marginBottom: 5
   },
 
   bookTitle:{
@@ -50,11 +53,20 @@ export const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 10,
+    alignSelf: 'center'
+  },
+
+  modalBookText: {
+    alignSelf: 'center'
+  },
+
+  modalBookDescription: {
+    marginTop: 15
   },
 
   modalClose: {
     color: 'blue',
-    marginTop: 10,
+    marginTop: -5,
     textAlign: 'right',
   },
   
