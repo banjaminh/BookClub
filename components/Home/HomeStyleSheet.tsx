@@ -9,5 +9,9 @@ export const styles = StyleSheet.create({
     position: 'relative',
   },
 
+  scrollContainer:{
+    marginTop: 200,
+    // marginLeft: 25,
+  }
 
 })
