@@ -14,10 +14,7 @@ export default function BookScrollView() {
 	const [books, setBooks] = useState(bookData.results.books);
 	const [selectedBook, setSelectedBook] = useState(null);
 	const [isModalVisible, setModalVisible] = useState(false);
-	console.log(books);
-	// useEffect(() => {
-	//     const booksArray = bookData.results.books
-	// },[])
+	
 
 	const toggleModal = (item) => {
 		setSelectedBook(item);
@@ -29,7 +26,7 @@ export default function BookScrollView() {
 				<Image
 					style={styles.bookImage}
 					source={{
-						uri: `https://covers.openlibrary.org/b/isbn/${item.primary_isbn13}-M.jpg`,
+						uri: item.book_image,
 					}}
 					resizeMode="cover"
 				/>
@@ -42,7 +39,6 @@ export default function BookScrollView() {
 			<FlatList
 				data={books}
 				renderItem={renderItem}
-				keyExtractor={(item) => item.key}
 				horizontal={true}
 			/>
 
@@ -60,7 +56,7 @@ export default function BookScrollView() {
 								<Image
 									style={styles.bookImage}
 									source={{
-										uri: `https://covers.openlibrary.org/b/isbn/${selectedBook.primary_isbn13}-M.jpg`,
+										uri: selectedBook.book_image,
 									}}
 									resizeMode="cover"
 								/>
