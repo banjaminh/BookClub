@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
 	Linking,
 } from 'react-native';
-import { styles } from './BookScrollViewStyleSheet.tsx';
+import { styles } from './BookScrollViewStyleSheet';
 import { Book } from '../../types';
 
 export default function BookScrollView() {
@@ -22,7 +22,7 @@ export default function BookScrollView() {
     setModalVisible(!isModalVisible);
   };
 
-	const handlePress = (purchaseLink) => {
+	const handlePress = (purchaseLink: string) => {
 		Linking.openURL(purchaseLink).catch((err) => console.error(err))
 	}
 
