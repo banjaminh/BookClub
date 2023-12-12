@@ -7,6 +7,7 @@ import {
 	Image,
 	Modal,
 	TouchableOpacity,
+	Linking,
 } from "react-native";
 import { styles } from "./BookScrollViewStyleSheet.tsx";
 
@@ -15,11 +16,15 @@ export default function BookScrollView() {
 	const [selectedBook, setSelectedBook] = useState(null);
 	const [isModalVisible, setModalVisible] = useState(false);
 	
-
 	const toggleModal = (item) => {
 		setSelectedBook(item);
 		setModalVisible(!isModalVisible);
 	};
+
+	const handlePress = (purchaseLink) => {
+		Linking.openURL(purchaseLink).catch((err) => console.error(err))
+	}
+	
 	const renderItem = ({ item }) => (
 		<TouchableOpacity onPress={() => toggleModal(item)}>
 			<View style={styles.bookContainer}>
@@ -65,9 +70,11 @@ export default function BookScrollView() {
 								/>
 								<Text style={styles.modalBookText}>Author: {selectedBook.author}</Text>
 								<Text style={styles.modalBookText}>Genre: Fiction</Text>
-
 								<Text style={styles.modalBookDescription}>{selectedBook.description}</Text>
-
+								
+								<TouchableOpacity style={styles.modalBuyButton} onPress={() => handlePress(selectedBook.amazon_product_url)}>
+									<Text>Click to Buy</Text>
+								</TouchableOpacity>
 							</>
 						)}
 					</View>
