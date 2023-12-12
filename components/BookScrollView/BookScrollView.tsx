@@ -20,7 +20,7 @@ export default function BookScrollView() {
     setSelectedBook(item);
     setModalVisible(!isModalVisible);
   };
-  const renderItem = ({ item }) => (
+  const renderItem = ({ item }: { item: Book }) => (
     <TouchableOpacity onPress={() => toggleModal(item)}>
       <View style={styles.bookContainer}>
         <Image
