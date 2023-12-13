@@ -8,7 +8,8 @@ export const styles = StyleSheet.create({
     flexWrap: 'wrap',
     alignItems: 'center',
     marginLeft: 20,
-    // backgroundColor: '#EAB464',
+
+    // backgroundColor: 'none',
     // height: '15%',
     borderRadius: 10,
     shadowColor: 'black',

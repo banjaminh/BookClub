@@ -7,8 +7,8 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     width: 290,
     height: 50,
-    borderWidth: 2, // border width
-    borderColor: 'black', // border color
+    borderWidth: 2, 
+    borderColor: 'black', 
     borderRadius: 10, 
   },
 
