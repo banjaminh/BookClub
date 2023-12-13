@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
   },
 
   inputContainer:{
-    marginTop: 175,
+   
   },
 
   searchInput:{
@@ -37,6 +37,29 @@ export const styles = StyleSheet.create({
     height: 40,
     backgroundColor: 'green',
     borderRadius: 5,
-  }
+  },
+
+  searchTypeContainer:{
+    marginTop: 150,
+    flexDirection: 'row',
+    marginLeft: 20,
+    
+  },
+
+  typeButton:{
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 60,
+    height: 30,
+    backgroundColor: 'lightgrey',
+    borderTopStartRadius: 7,
+    borderTopEndRadius: 7,
+    borderRightWidth: 1, 
+    borderColor: 'black', 
+  },
+
+  selectedButton:{
+    backgroundColor: 'yellow'
+  },
 
 })
