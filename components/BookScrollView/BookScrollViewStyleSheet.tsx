@@ -9,8 +9,8 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     marginLeft: 20,
 
-    backgroundColor: 'none',
-    height: '15%',
+    // backgroundColor: 'none',
+    // height: '15%',
     borderRadius: 10,
     shadowColor: 'black',
     shadowOffset: { width: 2, height: 2 },
