@@ -70,13 +70,13 @@ export const styles = StyleSheet.create({
     textAlign: 'right',
   },
   
-  modalBuyButton: {
-    backgroundColor: '#ff9900',
-    padding: 10,
-    // paddingVertical: 10,
-    // paddingHorizontal: 5,
-    borderRadius: 5,
-    marginTop: 10,
-    alignItems: 'center'
-  }
+  // modalBuyButton: {
+  //   backgroundColor: '#ff9900',
+  //   padding: 10,
+  //   // paddingVertical: 10,
+  //   // paddingHorizontal: 5,
+  //   borderRadius: 5,
+  //   marginTop: 10,
+  //   alignItems: 'center'
+  // }
 })

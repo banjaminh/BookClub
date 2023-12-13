@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import { styles } from './BookScrollViewStyleSheet';
 import { Book } from '../../types';
+import BuyButtons from '../BuyButtons/BuyButtons';
 
 export default function BookScrollView() {
   const [books, setBooks] = useState<Book[]>(bookData.results.books);
@@ -69,9 +70,12 @@ export default function BookScrollView() {
                 <Text style={styles.modalBookText}>Genre: Fiction</Text>
                 <Text style={styles.modalBookDescription}>{selectedBook.description}</Text>
 								
-                <TouchableOpacity style={styles.modalBuyButton} onPress={() => handlePress(selectedBook.amazon_product_url)}>
+                <View >
+                  <BuyButtons />
+                </View>
+                {/* <TouchableOpacity style={styles.modalBuyButton} onPress={() => handlePress(selectedBook.amazon_product_url)}>
                   <Text>Click to Buy</Text>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
               </>
             )}
           </View>
