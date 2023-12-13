@@ -12,6 +12,12 @@ export const styles = StyleSheet.create({
     width: 350,
     height: 300,
     marginBottom: 0,
-    padding: 0
+    padding: 0,
+    position: 'relative',
+  },
+  scrollContainer:{
+    marginTop: 200,
+    // marginLeft: 25,
   }
+
 })

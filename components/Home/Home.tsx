@@ -1,9 +1,25 @@
 import { View, Image, Text } from 'react-native'
 import { styles } from './HomeStyleSheet'
+import { useEffect } from "react";
+import BookScrollView from "../BookScrollView/BookScrollView";
 import {
   useFonts,
   Roboto_700Bold,
 } from "@expo-google-fonts/dev";
+// import { gatherLatest } from "../../apiCalls"
+
+	// useEffect(() => {
+	//   const fetchData = async () => {
+	//     try {
+	//       const info = await gatherLatest()
+	//       console.log(info)
+	//     } catch(error) {
+	//       console.log(error)
+	//     }
+	//   }
+
+	//   fetchData()
+	// }, [])
 
 export default function Home() {
   let [fontsLoaded] = useFonts({
@@ -27,6 +43,10 @@ export default function Home() {
          fontFamily: "Roboto_700Bold",
          fontSize: 16,
       }}>Titles In the Spotlight:</Text>
+      <View style={styles.scrollContainer}>
+				<BookScrollView />
+			</View>
     </View>
   )
+
 }
