@@ -7,8 +7,9 @@ import {
   Image,
   Modal,
   TouchableOpacity,
+	Linking,
 } from 'react-native';
-import { styles } from './BookScrollViewStyleSheet.tsx';
+import { styles } from './BookScrollViewStyleSheet';
 import { Book } from '../../types';
 
 export default function BookScrollView() {
@@ -20,6 +21,11 @@ export default function BookScrollView() {
     setSelectedBook(item);
     setModalVisible(!isModalVisible);
   };
+
+	const handlePress = (purchaseLink: string) => {
+		Linking.openURL(purchaseLink).catch((err) => console.error(err))
+	}
+
   const renderItem = ({ item }: { item: Book }) => (
     <TouchableOpacity onPress={() => toggleModal(item)}>
       <View style={styles.bookContainer}>
@@ -48,6 +54,9 @@ export default function BookScrollView() {
           <View style={styles.modalContent}>
             {selectedBook && (
               <>
+								<TouchableOpacity onPress={() => setModalVisible(false)}>
+									<Text style={styles.modalClose}>X</Text>
+								</TouchableOpacity>
                 <Text style={styles.modalTitle}>{selectedBook.title}</Text>
                 <Image
                   style={styles.bookImage}
@@ -56,13 +65,12 @@ export default function BookScrollView() {
                   }}
                   resizeMode='cover'
                 />
-                <Text>Author: {selectedBook.author}</Text>
-                <Text>Genre: Fiction</Text>
-
-                <Text>{selectedBook.description}</Text>
-
-                <TouchableOpacity onPress={() => setModalVisible(false)}>
-                  <Text style={styles.modalClose}>Close</Text>
+                <Text style={styles.modalBookText}>Author: {selectedBook.author}</Text>
+                <Text style={styles.modalBookText}>Genre: Fiction</Text>
+                <Text style={styles.modalBookDescription}>{selectedBook.description}</Text>
+								
+                <TouchableOpacity style={styles.modalBuyButton} onPress={() => handlePress(selectedBook.amazon_product_url)}>
+                  <Text>Click to Buy</Text>
                 </TouchableOpacity>
               </>
             )}
