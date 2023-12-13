@@ -8,8 +8,9 @@ export const styles = StyleSheet.create({
     flexWrap: 'wrap',
     alignItems: 'center',
     marginLeft: 20,
-    // backgroundColor: '#EAB464',
-    // height: '15%',
+
+    backgroundColor: 'none',
+    height: '15%',
     borderRadius: 10,
     shadowColor: 'black',
     shadowOffset: { width: 2, height: 2 },
@@ -26,6 +27,7 @@ export const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 4,
     overflow: 'hidden',
+    
   },
 
   bookTitle:{
