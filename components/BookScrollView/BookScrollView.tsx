@@ -78,7 +78,7 @@ export default function BookScrollView() {
 								</Text>
 
 								<View>
-									<BuyButtons />
+									<BuyButtons selectedBook={selectedBook}/>
 								</View>
 								{/* <TouchableOpacity style={styles.modalBuyButton} onPress={() => handlePress(selectedBook.amazon_product_url)}>
                   <Text>Click to Buy</Text>
