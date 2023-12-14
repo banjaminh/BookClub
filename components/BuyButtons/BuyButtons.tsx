@@ -125,7 +125,10 @@ const closeMenu = () => {
         </TouchableOpacity>
       </Animated.View> */}
       <TouchableOpacity
-        style={styles.modalBuyButton}
+        style={{
+          ...styles.modalBuyButton,
+          backgroundColor: showButtons ? 'red' : 'orange', 
+        }}
         onPress={() => {
           !showButtons
             ? (() => {
@@ -138,7 +141,7 @@ const closeMenu = () => {
               })();
         }}
       >
-        <Text>Click to Buy</Text>
+        {!showButtons ? <Text>Click to Buy</Text> : <Text>Close</Text> }
       </TouchableOpacity>
     </View>
   );
