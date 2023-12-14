@@ -2,6 +2,7 @@ import { View, Text } from "react-native";
 import { useEffect } from "react";
 import { styles } from "./HomeStyleSheet";
 import BookScrollView from "../BookScrollView/BookScrollView";
+import { SafeAreaView } from "react-native-safe-area-context";
 // import { gatherLatest } from "../../apiCalls"
 
 export default function Home() {
@@ -19,10 +20,11 @@ export default function Home() {
 	// }, [])
 
 	return (
-		<View style={styles.homeContainer}>
+		<SafeAreaView style={styles.homeContainer}>
+				<Text>Hello</Text>
 			<View style={styles.scrollContainer}>
 				<BookScrollView />
 			</View>
-		</View>
+		</SafeAreaView>
 	);
 }

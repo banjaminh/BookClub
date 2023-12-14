@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   homeContainer: {
@@ -7,6 +7,8 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'lightblue',
     position: 'relative',
+
+    paddingTop: Platform.OS === 'android' ? 25 : 0
   },
 
   scrollContainer:{
