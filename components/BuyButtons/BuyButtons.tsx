@@ -1,6 +1,6 @@
 import { View, TouchableOpacity, Text, Animated, Linking } from 'react-native';
 import { styles } from './BuyButtonsStyleSheet';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Book } from '../../types';
 
 interface BuyButtonsProps {
@@ -15,8 +15,9 @@ export default function BuyButtons({ selectedBook }: BuyButtonsProps) {
 
 
 
-const stores = Array.from({ length: 3 }, (_, index) => new Animated.Value(0));
-
+// const stores = Array.from({ length: 3 }, (_, index) => new Animated.Value(0));
+// const stores = Array.from({ length: 3 }, () => new Animated.Value(0));
+const stores = useRef(Array.from({ length: 3 }, () => new Animated.Value(0))).current;
 const openMenu = () => {
   stores.forEach((store, index) => {
     Animated.timing(store, {
@@ -84,10 +85,16 @@ const closeMenu = () => {
   //   );
   // });
 
-  const buttons = selectedBook?.buy_links.map((link, index) => {
+  const buttons = selectedBook?.buy_links.slice(0, 3).map((link, index) => {
     const store = stores[index];
     return (
-      <Animated.View key={index} style={[styles.modalBuyButton, { bottom: store }]}>
+      <Animated.View
+        key={index}
+        style={[
+          styles.modalBuyButton,
+          { bottom: store},
+        ]}
+      >
         <TouchableOpacity onPress={() => handlePress(link.url)}>
           <Text>{link.name}</Text>
         </TouchableOpacity>
