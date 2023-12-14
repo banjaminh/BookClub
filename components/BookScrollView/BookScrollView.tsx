@@ -41,7 +41,7 @@ export default function BookScrollView() {
       </View>
     </TouchableOpacity>
   );
-  
+
   return (
     <View>
       <FlatList 
@@ -57,25 +57,25 @@ export default function BookScrollView() {
       >
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
-            {selectedBook && (
+            {/* {selectedBook && ( */}
               <>
                 <TouchableOpacity onPress={() => setModalVisible(false)}>
                   <Text style={styles.modalClose}>X</Text>
                 </TouchableOpacity>
-                <Text style={styles.modalTitle}>{selectedBook.title}</Text>
+                <Text style={styles.modalTitle}>{selectedBook?.title}</Text>
                 <Image
                   style={styles.bookImage}
                   source={{
-                    uri: selectedBook.book_image,
+                    uri: selectedBook?.book_image,
                   }}
                   resizeMode='cover'
                 />
                 <Text style={styles.modalBookText}>
-                  Author: {selectedBook.author}
+                  Author: {selectedBook?.author}
                 </Text>
                 <Text style={styles.modalBookText}>Genre: Fiction</Text>
                 <Text style={styles.modalBookDescription}>
-                  {selectedBook.description}
+                  {selectedBook?.description}
                 </Text>
 
                 <View>
@@ -85,7 +85,7 @@ export default function BookScrollView() {
                   <Text>Click to Buy</Text>
                 </TouchableOpacity> */}
               </>
-            )}
+            {/* )} */}
           </View>
         </View>
       </Modal>

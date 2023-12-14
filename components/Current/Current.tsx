@@ -1,4 +1,11 @@
-import { View, Text, FlatList, TouchableOpacity, Image } from 'react-native';
+import {
+  View,
+  Text,
+  FlatList,
+  TouchableOpacity,
+  Image,
+  Modal,
+} from 'react-native';
 import { styles } from './CurrentStyleSheet';
 import { bookData } from '../BookScrollView/testData';
 import { Book } from '../../types';
@@ -6,37 +13,81 @@ import { useState } from 'react';
 import { allBookClubs } from '../../mockBookClubData';
 
 export default function Current() {
-  const [books, setBooks] = useState<Book[]>(bookData.results.books);
   const [currentBooks, setCurrentBooks] = useState<Book[]>([
     bookData.results.books[5],
     bookData.results.books[6],
+    bookData.results.books[3],
   ]);
+  const [isModalVisible, setModalVisible] = useState<boolean>(false);
+  const [selectedBook, setSelectedBook] = useState<Book | null>(null);
 
-  const [currentClub, setCurrentClub] = useState<string>('Reading Rabbits');
-const toggleModal = () => {
-  console.log('I was clicked ')
-}
+  const toggleModal = (item: Book) => {
+    console.log('I was clicked ');
+    setModalVisible(!isModalVisible);
+    setSelectedBook(item);
+  };
+
   const renderItem = ({ item }: { item: Book }) => (
-    <TouchableOpacity onPress = {() => toggleModal()}>
-      <Image
-        style={styles.bookImage}
-        source={{
-          uri: item.book_image,
-        }}
-        resizeMode='cover'
-      />
+    <TouchableOpacity onPress={() => toggleModal(item)}>
+      <View style={styles.currentBookContainer}>
+        <Image
+          style={styles.bookImage}
+          source={{
+            uri: item.book_image,
+          }}
+          resizeMode='cover'
+        />
+      </View>
     </TouchableOpacity>
   );
 
   return (
     <View style={styles.currentContainer}>
-      <Text>Club: {currentClub}</Text>
-      <Text>Currently Reading</Text>
-      <FlatList 
-        data={currentBooks} 
-        renderItem={renderItem} 
-        horizontal={true} 
-      />
+      <View style={styles.flatListTitle}>
+        <Text>Currently Reading</Text>
+      </View>
+      <View style={styles.flatListContainer}>
+        <FlatList
+          data={currentBooks}
+          renderItem={renderItem}
+          horizontal={true}
+        />
+      </View>
+      <Modal
+        animationType='slide'
+        transparent={true}
+        visible={isModalVisible}
+        onRequestClose={() => setModalVisible(false)}
+      >
+        <View style={styles.modalContainer}>
+          <View style={styles.btnBookContainer}>
+            <Image
+              style={styles.selectedBookImage}
+              source={{
+                uri: selectedBook?.book_image,
+              }}
+              resizeMode='cover'
+            />
+            <View style={styles.buttonContainer}>
+              <TouchableOpacity onPress={() => setModalVisible(false)}>
+                <View style={styles.exitButton}>
+                  <Text>X</Text>
+                </View>
+              </TouchableOpacity>
+
+              <View style={styles.bookClubContainer}>
+                <Text style={styles.titleWrapper}>{selectedBook?.title}</Text>
+                <Text>Book Club: Reading Rabbits</Text>
+                <View style={styles.addNotesContainer}>
+                  <TouchableOpacity>
+                    <Text>Add Notes</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 }
