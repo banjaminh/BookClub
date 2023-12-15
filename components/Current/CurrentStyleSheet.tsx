@@ -79,15 +79,10 @@ export const styles = StyleSheet.create({
     marginBottom: 10,
     alignSelf: 'center',
   },
-  notesContainer: {
-    width: '90%',
+  commentContainer: {
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 10,
-  },
-  commentContainer: {
-    marginTop: 10,
     width: '100%',
   },
- 
 });

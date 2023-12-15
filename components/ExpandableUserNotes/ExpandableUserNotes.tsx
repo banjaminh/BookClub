@@ -6,7 +6,6 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import { CurrentItem } from '../../types';
-('../../types');
 
 interface ExpandableUserNotesProps {
   item: CurrentItem;
@@ -21,10 +20,9 @@ export default function ExpandableUserNotes({
   item,
 }: ExpandableUserNotesProps) {
   const [expanded, setExpanded] = useState<boolean>(false);
-
+  
   const animatedStyle = useAnimatedStyle(() => {
     const animatedHeight = expanded ? withTiming(100) : withTiming(0);
-
     return {
       height: animatedHeight,
     };
@@ -44,8 +42,8 @@ export default function ExpandableUserNotes({
 
       <Animated.View style={animatedStyle}>
         {item.user_notes.map((userNote: UserNote, index: number) => (
-          <View key={index}>
-            <Text>{`${userNote.date} ${userNote.comment}`}</Text>
+          <View key={index} style={styles.userNotesStyle}>
+            <Text><Text style={styles.dateStyle}>{`${userNote.date}:`}</Text>{` ${userNote.comment}`}</Text>
           </View>
         ))}
       </Animated.View>
