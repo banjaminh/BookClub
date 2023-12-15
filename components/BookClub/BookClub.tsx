@@ -21,7 +21,7 @@ export default function BookClub() {
           <Text>Join</Text>
         </TouchableOpacity>
       </View>
-      <Text style={styles.heading}>Your Clubs:</Text>
+      <Text style={styles.heading}>Your Book Clubs:</Text>
       <View style={styles.allClubs}>
         <View style={styles.club}>
           <Text style={styles.clubHeading}>Book Club Groupies</Text>

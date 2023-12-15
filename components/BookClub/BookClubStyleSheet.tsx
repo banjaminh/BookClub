@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
   bookClubContainer: {
     flex: 1,
-    marginTop: 80,
+    marginTop: 130,
   },
   internalNavigation: {
     flexDirection: 'row',

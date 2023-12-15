@@ -12,7 +12,7 @@ const navigation = useNavigation();
   return (
     <View style={styles.createClubContainer}> 
         <View style={styles.internalNavigation}>
-            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('BookClub')}>
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('DashBoard')}>
             <Text> ⬅️ Return to Your Clubs</Text>
             </TouchableOpacity>
         </View>

@@ -21,7 +21,6 @@ export default function App() {
         >
           <Stack.Screen name='DashBoard' component={DashBoard} />
           <Stack.Screen name='CreateClub' component={CreateClub} />
-          <Stack.Screen name='BookClub' component={BookClub} />
           <Stack.Screen name='JoinClub' component={JoinClub} />
         </Stack.Navigator>
       </NavigationContainer>
