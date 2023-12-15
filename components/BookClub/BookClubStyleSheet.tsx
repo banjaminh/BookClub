@@ -10,8 +10,10 @@ export const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'center',
     paddingLeft: 10,
+    height: 75,
   },
   button: {
+    width: 200,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 10,
@@ -19,6 +21,7 @@ export const styles = StyleSheet.create({
     marginRight: 20,
     borderRadius: 10,
   },
+
   heading: {
     marginTop: 40,
     marginBottom: 20,
