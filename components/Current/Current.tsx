@@ -12,6 +12,8 @@ import { Book } from '../../types';
 import { useState } from 'react';
 import { allBookClubs } from '../../mockBookClubData';
 
+import { userNotes } from './MockUserNotes';
+
 export default function Current() {
   const [currentBooks, setCurrentBooks] = useState<Book[]>([
     bookData.results.books[5],
@@ -40,6 +42,16 @@ export default function Current() {
       </View>
     </TouchableOpacity>
   );
+
+  const notes = userNotes.book_1.notes.map((note, index) => {
+    return (
+      <TouchableOpacity key={index}>
+        <View style={styles.notes}>
+          <Text> {note.notes_title}</Text>
+        </View>
+      </TouchableOpacity>
+    );
+  });
 
   return (
     <View style={styles.currentContainer}>
@@ -86,6 +98,9 @@ export default function Current() {
               </View>
             </View>
           </View>
+          <View style={styles.notesContainer}>
+            {notes}
+            </View>
         </View>
       </Modal>
     </View>

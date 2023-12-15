@@ -5,6 +5,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    width: '100%',
   },
   bookImage: {
     width: 125,
@@ -15,7 +16,6 @@ export const styles = StyleSheet.create({
     // shadowOpacity: 1,
     // shadowRadius: 4,
     overflow: 'hidden',
-
     alignSelf: 'center',
     marginBottom: 5,
   },
@@ -42,6 +42,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     flex: 1,
     backgroundColor: 'white',
+    width: '100%',
   },
   exitButton: {
     alignItems: 'flex-end',
@@ -68,14 +69,30 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#f0f0f0',
     marginTop: 20,
-    borderWidth: 1, 
-    borderColor: 'grey', 
-    borderRadius: 8, 
-    padding: 5, 
+    borderWidth: 1,
+    borderColor: 'grey',
+    borderRadius: 8,
+    padding: 5,
   },
   titleWrapper: {
     fontWeight: 'bold',
     marginBottom: 10,
     alignSelf: 'center',
+  },
+  notesContainer: {
+    width: '90%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 10,
+  },
+  notes: {
+    margin: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: 'grey',
+    borderRadius: 8,
+    width: 300,
+    padding: 5,
   },
 });
