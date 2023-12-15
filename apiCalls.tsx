@@ -32,3 +32,18 @@ export async function getTopFive() {
 		console.log("error in top five");
 	}
 }
+
+export async function fetchByGenre(genre) {
+	try {
+		const response = await fetch(
+			`https://api.nytimes.com/svc/books/v3/lists/current/${genre}.json?api-key=utMaUH9VH3AtPn6S8dJGDPp6DMkzi9qU`
+		)
+
+		if (response.ok) {
+			const data = await response.json();
+			return data;
+		}
+	} catch (error) {
+		console.log("error in fetching by genre");
+	}
+}
