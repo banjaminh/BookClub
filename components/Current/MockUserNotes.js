@@ -3,7 +3,7 @@ export const userNotes = {
     "notes": [
       {
         "notes_title": 'Chapters 1-4',
-        "notes": [
+        "user_notes": [
           {
             "date": '12-01-2023',
             "comment": 'I have some strong opinios about this chapter!',
@@ -20,7 +20,7 @@ export const userNotes = {
       },
       {
         "notes_title": 'Chapters 5-10',
-        "notes": [
+        "user_notes": [
           {
             "date": '12-01-2023',
             "comment": 'I have some strong opinios about this chapter!',
@@ -38,7 +38,7 @@ export const userNotes = {
       },
       {
         "notes_title": 'Chapters 11-15',
-        "notes": [
+        "user_notes": [
           {
             "date": '12-01-2023',
             "comment": 'I have some strong opinios about this chapter!',

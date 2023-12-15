@@ -85,14 +85,9 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     marginTop: 10,
   },
-  notes: {
-    margin: 5,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderWidth: 1,
-    borderColor: 'grey',
-    borderRadius: 8,
-    width: 300,
-    padding: 5,
+  commentContainer: {
+    marginTop: 10,
+    width: '100%',
   },
+ 
 });

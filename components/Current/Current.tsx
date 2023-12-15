@@ -10,9 +10,11 @@ import { styles } from './CurrentStyleSheet';
 import { bookData } from '../BookScrollView/testData';
 import { Book } from '../../types';
 import { useState } from 'react';
-import { allBookClubs } from '../../mockBookClubData';
-
 import { userNotes } from './MockUserNotes';
+import ExpandableUserNotes from '../ExpandableUserNotes/ExpandableUserNotes';
+
+import { CurrentItem } from '../../types';
+('../../types');
 
 export default function Current() {
   const [currentBooks, setCurrentBooks] = useState<Book[]>([
@@ -24,7 +26,6 @@ export default function Current() {
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
 
   const toggleModal = (item: Book) => {
-    console.log('I was clicked ');
     setModalVisible(!isModalVisible);
     setSelectedBook(item);
   };
@@ -43,15 +44,13 @@ export default function Current() {
     </TouchableOpacity>
   );
 
-  const notes = userNotes.book_1.notes.map((note, index) => {
-    return (
-      <TouchableOpacity key={index}>
-        <View style={styles.notes}>
-          <Text> {note.notes_title}</Text>
-        </View>
-      </TouchableOpacity>
-    );
-  });
+  const handleAddNotes = () => {
+    console.log('add notes');
+  };
+
+  const renderItem2 = (item: CurrentItem) => {
+    return <ExpandableUserNotes item={item} />;
+  };
 
   return (
     <View style={styles.currentContainer}>
@@ -86,21 +85,23 @@ export default function Current() {
                   <Text>X</Text>
                 </View>
               </TouchableOpacity>
-
               <View style={styles.bookClubContainer}>
                 <Text style={styles.titleWrapper}>{selectedBook?.title}</Text>
                 <Text>Book Club: Reading Rabbits</Text>
                 <View style={styles.addNotesContainer}>
-                  <TouchableOpacity>
+                  <TouchableOpacity onPress={handleAddNotes}>
                     <Text>Add Notes</Text>
                   </TouchableOpacity>
                 </View>
               </View>
             </View>
           </View>
-          <View style={styles.notesContainer}>
-            {notes}
-            </View>
+          <View style={styles.commentContainer}>
+            <FlatList
+              data={userNotes.book_1.notes}
+              renderItem={({ item }) => renderItem2(item)}
+            />
+          </View>
         </View>
       </Modal>
     </View>
