@@ -84,5 +84,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     marginTop: 10,
     width: '100%',
+    // borderWidth: 1,
+    // borderColor: 'grey',
   },
 });
