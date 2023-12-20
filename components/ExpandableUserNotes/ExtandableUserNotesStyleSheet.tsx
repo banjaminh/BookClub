@@ -10,7 +10,11 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'grey',
     borderRadius: 8,
-
+    shadowColor: 'black',
+    shadowOffset: { width: 2, height: 2 },
+    shadowOpacity: 1,
+    shadowRadius: 2,
+    backgroundColor: 'white',
     margin: 5,
   },
   notes: {

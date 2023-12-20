@@ -26,6 +26,7 @@ export default function ExpandableUserNotes({
 
   const onLayout = (event: LayoutChangeEvent) => {
     const onLayoutHeight = event.nativeEvent.layout.height;
+    console.log(onLayoutHeight)
   
     if (onLayoutHeight > 0 && height !== onLayoutHeight) {
       setHeight(onLayoutHeight);
@@ -33,19 +34,11 @@ export default function ExpandableUserNotes({
   };
 
   const collapsableStyle = useAnimatedStyle(() => {
-    animatedHeight.value = expanded ? withTiming(height) : withTiming(0);
-  
+    animatedHeight.value = expanded ? height : 0;
     return {
       height: animatedHeight.value,
     };
   }, [expanded, height]);
-
-  // const animatedStyle = useAnimatedStyle(() => {
-  //   const animatedHeight = expanded ? withTiming(height) : withTiming(0);
-  //   return {
-  //     height: animatedHeight,
-  //   };
-  // });
 
   const onNotesPress = () => {
     setExpanded(!expanded);
@@ -60,7 +53,7 @@ export default function ExpandableUserNotes({
         </View>
       </TouchableOpacity>
 
-      <Animated.View style={[collapsableStyle]}>
+      <Animated.View style={[collapsableStyle, {overflow: 'hidden'}]}>
         <View onLayout={onLayout} >
         {item.user_notes.map((userNote: UserNote, index: number) => (
           <View key={index} style={[styles.userNotesStyle]} >
