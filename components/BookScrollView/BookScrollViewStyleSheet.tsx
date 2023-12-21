@@ -36,48 +36,5 @@ export const styles = StyleSheet.create({
     marginTop: 20,
   },
 
-  modalContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-  },
-
-  modalContent: {
-    backgroundColor: 'white',
-    padding: 20,
-    borderRadius: 10,
-    width: '80%',
-  },
-
-  modalTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 10,
-    alignSelf: 'center'
-  },
-
-  modalBookText: {
-    alignSelf: 'center'
-  },
-
-  modalBookDescription: {
-    marginTop: 15
-  },
-
-  modalClose: {
-    color: 'blue',
-    marginTop: -5,
-    textAlign: 'right',
-  },
-  
-  // modalBuyButton: {
-  //   backgroundColor: '#ff9900',
-  //   padding: 10,
-  //   // paddingVertical: 10,
-  //   // paddingHorizontal: 5,
-  //   borderRadius: 5,
-  //   marginTop: 10,
-  //   alignItems: 'center'
-  // }
+ 
 })

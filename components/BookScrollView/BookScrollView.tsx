@@ -12,6 +12,7 @@ import {
 import { styles } from './BookScrollViewStyleSheet';
 import { Book } from '../../types';
 import BuyButtons from '../BuyButtons/BuyButtons';
+import BookModal from '../BookModal/BookModal';
 
 export default function BookScrollView() {
   const [books, setBooks] = useState<Book[]>(bookData.results.books);
@@ -49,46 +50,8 @@ export default function BookScrollView() {
         renderItem={renderItem} 
         horizontal={true} 
       />
-      <Modal
-        animationType='slide'
-        transparent={true}
-        visible={isModalVisible}
-        onRequestClose={() => setModalVisible(false)}
-      >
-        <View style={styles.modalContainer}>
-          <View style={styles.modalContent}>
-            {/* {selectedBook && ( */}
-              <>
-                <TouchableOpacity onPress={() => setModalVisible(false)}>
-                  <Text style={styles.modalClose}>X</Text>
-                </TouchableOpacity>
-                <Text style={styles.modalTitle}>{selectedBook?.title}</Text>
-                <Image
-                  style={styles.bookImage}
-                  source={{
-                    uri: selectedBook?.book_image,
-                  }}
-                  resizeMode='cover'
-                />
-                <Text style={styles.modalBookText}>
-                  Author: {selectedBook?.author}
-                </Text>
-                <Text style={styles.modalBookText}>Genre: Fiction</Text>
-                <Text style={styles.modalBookDescription}>
-                  {selectedBook?.description}
-                </Text>
-
-                <View>
-                  <BuyButtons selectedBook={selectedBook} />
-                </View>
-                {/* <TouchableOpacity style={styles.modalBuyButton} onPress={() => handlePress(selectedBook.amazon_product_url)}>
-                  <Text>Click to Buy</Text>
-                </TouchableOpacity> */}
-              </>
-            {/* )} */}
-          </View>
-        </View>
-      </Modal>
+      <BookModal selectedBook={selectedBook} setModalVisible={setModalVisible} isModalVisible={isModalVisible}/>
+      
     </View>
   );
 }
