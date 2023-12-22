@@ -1,10 +1,11 @@
 import { StyleSheet } from "react-native";
-import SelectedGenreView from "./SelectedGenreView";
+import SelectedGenreView from "./BookResultsView";
 
 export const styles = StyleSheet.create({
-  selectedGenreViewContainer : {
+  bookResultsViewContainer : {
     flex: 1,
     alignItems: 'center',
+    backgroundColor: 'blue',
   },
 
   individualFlatListItem : {
@@ -14,14 +15,17 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     marginLeft: 20,
     marginTop: 25,
+    backgroundColor: 'yellow'
     // borderWidth: 2,
     // borderColor: 'blue',
   },
 
   bookImage:{
+    // width: 150,
     width: '90%',
     height: 220,
     marginBottom: 5,
+    backgroundColor: 'green'
   },
 
   bookTitle:{

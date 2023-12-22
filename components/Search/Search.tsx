@@ -12,15 +12,26 @@ import { styles } from "./SearchStyleSheet";
 import { useState } from "react";
 import { bookTypes } from "../../list_names";
 import { fetchByGenre } from "../../apiCalls";
-import SelectedGenreView from "../SelectedGenreView/SelectedGenreView";
+import BookResultsView from "../BookResultsView/BookResultsView";
 import { Book } from "../../types";
+import BookModal from "../BookModal/BookModal";
 
 export default function Search() {
 	const [input, setInput] = useState<string>("");
 	const [suggestions, setSuggestions] = useState<string[]>([]);
 	const [showSuggestions, setShowSuggestions] = useState<boolean>(false);
 	const [searchType, setSearchType] = useState<string>("title");
-	const [selectedGenre, setSelectedGenre] = useState<Book[] | null>(null)
+	const [bookResults, setBookResults] = useState<Book[] | null>(null)
+	const [isModalVisible, setModalVisible] = useState<boolean>(false);
+	const [selectedBook, setSelectedBook] = useState<Book | null>(null);
+
+  const toggleModal = (item: Book) => {
+    console.log('press')
+    setSelectedBook(item);
+    setModalVisible(!isModalVisible);
+  };
+  
+
 
 	function searchBookTypes(searchInput: string) {
 		const results = bookTypes.filter((type) => {
@@ -39,7 +50,7 @@ export default function Search() {
 				console.log('selectedSuggestion @ in getGenre', input)
 				const genreType = await fetchByGenre(input);
 				console.log('genreType', genreType)
-				setSelectedGenre(genreType.results.books)
+		, setBookResults(genreType.results.books)
 			} catch (error) {
 				console.log(error)
 			}
@@ -67,7 +78,7 @@ export default function Search() {
 	}
 
 	function onChangeText(text: string) {
-		setSelectedGenre(null)
+	 setBookResults(null)
 		setInput(text);
 		if (text.length > 1) {
 			setShowSuggestions(true);
@@ -145,7 +156,8 @@ export default function Search() {
 					)}
 				</View>
 			</TouchableWithoutFeedback>
-			{selectedGenre && <SelectedGenreView selectedGenre={selectedGenre}/>}
+			{bookResults && <BookResultsView toggleModal={toggleModal} setModalVisible={setModalVisible} isModalVisible={isModalVisible} setSelectedBook={setSelectedBook} bookResults={bookResults}/>}
+			<BookModal selectedBook={selectedBook} isModalVisible={isModalVisible} setModalVisible={setModalVisible}/>
 		</View>
 	);
 }
