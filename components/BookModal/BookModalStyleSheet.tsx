@@ -49,4 +49,9 @@ export const styles = StyleSheet.create({
     alignSelf: 'center',
     marginBottom: 5
   },
+
+  modalCloseButton:{
+    width: 10,
+    height: 10,
+  },
 })

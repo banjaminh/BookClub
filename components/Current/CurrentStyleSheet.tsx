@@ -43,6 +43,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
     width: '100%',
+    marginTop: 50,
   },
   exitButton: {
     alignItems: 'flex-end',
