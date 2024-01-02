@@ -26,7 +26,6 @@ export default function ExpandableUserNotes({
 
   const onLayout = (event: LayoutChangeEvent) => {
     const onLayoutHeight = event.nativeEvent.layout.height;
-    console.log(onLayoutHeight)
   
     if (onLayoutHeight > 0 && height !== onLayoutHeight) {
       setHeight(onLayoutHeight);
