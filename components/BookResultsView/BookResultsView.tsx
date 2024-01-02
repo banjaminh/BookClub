@@ -25,17 +25,20 @@ export default function BookResultsView({
 	isModalVisible,
 }: BookResultsViewProps) {
 	const renderItem = ({ item }: { item: Book }) => (
-		<TouchableOpacity onPress={() => toggleModal(item) }style={styles.touchableOpacity}>
+		<TouchableOpacity onPress={() => toggleModal(item)}>
 			<View style={styles.individualFlatListItem}>
+       
 				<Image style={styles.bookImage} source={{ uri: item.book_image }} />
-				<Text style={styles.bookTitle}>{item.title}</Text>
+        
+				<Text  style={styles.bookTitle}>{item.title}</Text>
+        
 			</View>
 		</TouchableOpacity>
 	);
 
 	return (
 		<View style={styles.bookResultsViewContainer}>
-			<FlatList data={bookResults} renderItem={renderItem} numColumns={2} />
+			<FlatList data={bookResults} renderItem={renderItem} numColumns={2} showsVerticalScrollIndicator={false} />
 		</View>
 	);
 }

@@ -44,7 +44,7 @@ export default function BookScrollView() {
   );
 
   return (
-    <View>
+    <View style={styles.homeFlatListContainer}>
       <FlatList 
         data={books} 
         renderItem={renderItem} 
