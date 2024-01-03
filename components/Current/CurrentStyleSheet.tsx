@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 
 export const styles = StyleSheet.create({
   currentContainer: {
@@ -41,9 +41,9 @@ export const styles = StyleSheet.create({
   modalContainer: {
     alignItems: 'center',
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: 'lightblue',
     width: '100%',
-    marginTop: 50,
+    marginTop: Platform.OS === 'android' ? 0 : 50,
   },
   exitButton: {
     alignItems: 'flex-end',
