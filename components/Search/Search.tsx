@@ -26,7 +26,6 @@ export default function Search() {
 	const [selectedBook, setSelectedBook] = useState<Book | null>(null);
 
   const toggleModal = (item: Book) => {
-    console.log('press')
     setSelectedBook(item);
     setModalVisible(!isModalVisible);
   };

@@ -19,7 +19,7 @@ export default function Header() {
   return (
     <View style={styles.headerContainer}>
       <Image 
-      style={{width: 90, height: 60, marginLeft: 25, marginTop: 100,}}
+      style={styles.logoPicture}
       source={require('../../assets/logo.png')}
       />
       <TouchableOpacity style={styles.signInButton}>
