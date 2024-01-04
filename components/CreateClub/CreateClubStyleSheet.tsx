@@ -15,9 +15,13 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  heading: {
+  createClubHeading: {
     marginTop: 40,
     marginBottom: 20,
-    paddingLeft: 10,
+    
+    fontSize: 20,
   },
+  createClubHeadingWrapper: {
+    alignItems: 'center'
+  }
 })

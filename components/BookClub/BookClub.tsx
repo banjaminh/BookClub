@@ -10,7 +10,7 @@ export default function BookClub() {
 			<View style={styles.internalNavigation}>
 				<TouchableOpacity
 					style={styles.button}
-					onPress={() => navigation.navigate("JoinClub")}
+					onPress={() => navigation.navigate("CreateClub")}
 				>
 					<Text>Create</Text>
 				</TouchableOpacity>

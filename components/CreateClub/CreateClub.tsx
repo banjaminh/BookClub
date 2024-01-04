@@ -5,6 +5,7 @@ import {
 } from "react-native";
 import { styles } from "./CreateClubStyleSheet";
 import { useNavigation } from "@react-navigation/native";
+import ClubForm from "../ClubForm/ClubForm";
 
 export default function CreateClub() {
 const navigation = useNavigation();
@@ -16,7 +17,10 @@ const navigation = useNavigation();
             <Text> ⬅️ Return to Your Clubs</Text>
             </TouchableOpacity>
         </View>
-      <Text style={styles.heading}>Create a Club:</Text>
+        <View style={styles.createClubHeadingWrapper}>
+          <Text style={styles.createClubHeading}>Create Club</Text>
+        </View>
+      <ClubForm />
     </View>
   )
 } 
