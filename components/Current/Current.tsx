@@ -14,6 +14,7 @@ import { userNotes } from './MockUserNotes';
 import ExpandableUserNotes from '../ExpandableUserNotes/ExpandableUserNotes';
 
 import { CurrentItem } from '../../types';
+import { ListItem } from '../ListItem/ListItem';
 ('../../types');
 
 export default function Current() {
@@ -49,7 +50,7 @@ export default function Current() {
   };
 
   const renderItem2 = (item: CurrentItem) => {
-    return <ExpandableUserNotes item={item} />;
+    return <ListItem item={item} />;
   };
 
   return (

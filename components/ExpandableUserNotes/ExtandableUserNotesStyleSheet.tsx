@@ -40,4 +40,8 @@ export const styles = StyleSheet.create({
   dateStyle: {
     fontWeight: 'bold',
   },
+
+  collapsableContainer: {
+    overflow: 'visible',
+  },
 });
