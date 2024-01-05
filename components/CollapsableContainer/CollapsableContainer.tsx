@@ -18,7 +18,7 @@ export const CollapsableContainer = ({
 
   const onLayout = (event: LayoutChangeEvent) => {
     const onLayoutHeight = event.nativeEvent.layout.height;
-
+    console.log("EVENT",event.nativeEvent.layout.height)
     if (onLayoutHeight > 0 && height !== onLayoutHeight) {
       setHeight(onLayoutHeight);
     }

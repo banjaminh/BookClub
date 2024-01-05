@@ -4,15 +4,24 @@ import { useNavigation } from "@react-navigation/native";
 import { useEffect, useState } from "react";
 import { BookClubInfo } from "../../types";
 import { allBookClubs } from "../../mockBookClubData";
+import ClubPageModal from "../ClubPageModal/ClubPageModal";
 
 export default function BookClub() {
 	const navigation = useNavigation();
 	const [bookClubs, setBookClubs] = useState<BookClubInfo[] >(allBookClubs)
-  
+	const [selectedClub, setSelectedClub] = useState<BookClubInfo | null>(null);
+	const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
+	
+	function handleClubSelect(club : BookClubInfo){
+		setSelectedClub(club);
+		setIsModalVisible(true);
+	}
+	
+	
 	const bookClubCards = bookClubs?.map((club) => {
 		return (
 
-		<TouchableOpacity>
+		<TouchableOpacity key={club.id} onPress={() => handleClubSelect(club)}>
 			<View style={styles.club}>	
 				<Text style={styles.clubHeading}>{club.bookClubName}</Text>
 			</View>
@@ -45,6 +54,7 @@ export default function BookClub() {
 			<View style={styles.allClubs}>
 				{bookClubCards}
 			</View>
+			<ClubPageModal isModalVisible={isModalVisible} selectedClub={selectedClub} setIsModalVisible={setIsModalVisible} />
 		</View>
 	);
 }
