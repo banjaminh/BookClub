@@ -9,6 +9,15 @@ export default function ClubForm() {
   function handleCreateClubPress() {
     const randomNumber = Math.floor(Math.random() * (100000 - 10000 + 1)) + 10000;
     const clubId = "#" + randomNumber
+    // after create club, go to separate page
+      // post requests- immediately fetch data (ID)
+      // or have name and id in the body of post
+      // if res.ok, capture response 
+    // Options:
+      // create club(post req)
+      // navigate back to main club page
+      // have the book club render there
+
   }
 
   return (

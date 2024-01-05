@@ -40,3 +40,30 @@ export interface CurrentItem {
     comment: string;
   }[];
 }
+
+export interface Meeting {
+  date: string;
+  chapters: string;
+}
+
+export interface CurrentBook {
+  ISBN: string;
+  startDate: string;
+  meetings: Record<number, Meeting>;
+}
+
+export interface PastBook {
+  ISBN: string;
+  startDate: string;
+  meetings: Record<number, Meeting>;
+}
+
+export interface BookClubInfo {
+  id: string;
+  bookClubName: string;
+  members: number[];
+  groupProfilePicture: string;
+  currentBook: CurrentBook;
+  pastBooks: PastBook[];
+  nextInLine: string[];
+}
